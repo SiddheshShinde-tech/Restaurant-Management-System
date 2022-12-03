@@ -1,3 +1,7 @@
+import 'dart:async';
+
+import 'package:intl/intl.dart';
+
 import '../repeat/repeat_animations.dart';
 import '../repeat/repeat_icon_button.dart';
 import '../repeat/repeat_theme.dart';
@@ -154,9 +158,47 @@ class _OptionpageWidgetState extends State<OptionpageWidget>
   };
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
+  String timeText="";
+  String dateText="";
+
+
+
+  String formatCurrentLiveTime(DateTime time){
+    return DateFormat("hh:mm:ss a").format(time);
+  }
+
+  String formatCurrentDate(DateTime date){
+    return DateFormat("dd MMMM, yyyy").format(date);
+  }
+
+  getCurrentLiveTime(){
+    final DateTime timeNow = DateTime.now();
+    final String liveTime = formatCurrentLiveTime(timeNow);
+    final String liveDate = formatCurrentDate(timeNow);
+
+    if(this.mounted){
+      setState(() {
+        timeText = liveTime;
+        dateText = liveDate;
+      });
+    }
+
+  }
+
   @override
   void initState() {
     super.initState();
+
+    // time
+    timeText = formatCurrentLiveTime(DateTime.now());
+
+    //date
+    dateText = formatCurrentDate(DateTime.now());
+
+    Timer.periodic(const Duration(seconds: 1), (timer) {
+      getCurrentLiveTime();
+    });
+
     startPageLoadAnimations(
       animationsMap.values
           .where((anim) => anim.trigger == AnimationTrigger.onPageLoad),
@@ -241,7 +283,7 @@ class _OptionpageWidgetState extends State<OptionpageWidget>
                       color: Color(0xFFE0E3E7),
                     ).animated([animationsMap['dividerOnPageLoadAnimation']]),
                     Text(
-                      'Tuesday, 6th May 2022 10:00am',
+                      timeText+"\n"+dateText,
                       style: RepEatTheme.of(context).title1.override(
                             fontFamily: 'Outfit',
                             color: Color(0xFFF7941E),

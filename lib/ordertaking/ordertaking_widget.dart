@@ -83,133 +83,135 @@ class _OrdertakingWidgetState extends State<OrdertakingWidget> {
         ),
       ),
       backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
-              child: TextFormField(
-                controller: yourNameController,
-                obscureText: false,
-                decoration: InputDecoration(
-                  labelText: 'Table Number',
-                  labelStyle: RepEatTheme.of(context).bodyText2.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Color(0xFF95A1AC),
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                      ),
-                  hintStyle: RepEatTheme.of(context).bodyText2.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Color(0xFF95A1AC),
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                      ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0xFFF1F4F8),
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0xFFF1F4F8),
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  filled: true,
-                  fillColor: Colors.white,
-                  contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
-                ),
-                style: RepEatTheme.of(context).bodyText1.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Color(0xFF090F13),
-                      fontSize: 14,
-                      fontWeight: FontWeight.normal,
-                    ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 12),
-              child: TextFormField(
-                controller: myBioController,
-                obscureText: false,
-                decoration: InputDecoration(
-                  labelText: 'Order',
-                  labelStyle: RepEatTheme.of(context).bodyText2.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Color(0xFF95A1AC),
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                      ),
-                  hintText: 'Order',
-                  hintStyle: RepEatTheme.of(context).bodyText2.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Color(0xFF95A1AC),
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                      ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0xFFF1F4F8),
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0xFFF1F4F8),
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  filled: true,
-                  fillColor: Colors.white,
-                  contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
-                ),
-                style: RepEatTheme.of(context).bodyText1.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Color(0xFF090F13),
-                      fontSize: 14,
-                      fontWeight: FontWeight.normal,
-                    ),
-                textAlign: TextAlign.start,
-                maxLines: 3,
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0, 0.05),
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
-                child: REButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
-                  },
-                  text: 'Save Changes',
-                  options: REButtonOptions(
-                    width: 340,
-                    height: 60,
-                    color: Color(0xFFF7941E),
-                    textStyle: RepEatTheme.of(context).subtitle2.override(
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
+                child: TextFormField(
+                  controller: yourNameController,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    labelText: 'Table Number',
+                    labelStyle: RepEatTheme.of(context).bodyText2.override(
                           fontFamily: 'Lexend Deca',
-                          color: Colors.white,
-                          fontSize: 16,
+                          color: Color(0xFF95A1AC),
+                          fontSize: 14,
                           fontWeight: FontWeight.normal,
                         ),
-                    elevation: 2,
-                    borderSide: BorderSide(
-                      color: Colors.transparent,
-                      width: 1,
+                    hintStyle: RepEatTheme.of(context).bodyText2.override(
+                          fontFamily: 'Lexend Deca',
+                          color: Color(0xFF95A1AC),
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                        ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0xFFF1F4F8),
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
                     ),
-                    borderRadius: 8,
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0xFFF1F4F8),
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                    contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
+                  ),
+                  style: RepEatTheme.of(context).bodyText1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: Color(0xFF090F13),
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                      ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 12),
+                child: TextFormField(
+                  controller: myBioController,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    labelText: 'Order',
+                    labelStyle: RepEatTheme.of(context).bodyText2.override(
+                          fontFamily: 'Lexend Deca',
+                          color: Color(0xFF95A1AC),
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                        ),
+                    hintText: 'Order',
+                    hintStyle: RepEatTheme.of(context).bodyText2.override(
+                          fontFamily: 'Lexend Deca',
+                          color: Color(0xFF95A1AC),
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                        ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0xFFF1F4F8),
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0xFFF1F4F8),
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                    contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
+                  ),
+                  style: RepEatTheme.of(context).bodyText1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: Color(0xFF090F13),
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                      ),
+                  textAlign: TextAlign.start,
+                  maxLines: 3,
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(0, 0.05),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+                  child: REButtonWidget(
+                    onPressed: () {
+                      print('Button pressed ...');
+                    },
+                    text: 'Save Changes',
+                    options: REButtonOptions(
+                      width: 340,
+                      height: 60,
+                      color: Color(0xFFF7941E),
+                      textStyle: RepEatTheme.of(context).subtitle2.override(
+                            fontFamily: 'Lexend Deca',
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                          ),
+                      elevation: 2,
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                        width: 1,
+                      ),
+                      borderRadius: 8,
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
