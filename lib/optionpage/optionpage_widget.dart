@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:intl/intl.dart';
+import 'package:isdp/chefoption/chefoption_widget.dart';
 
 import '../repeat/repeat_animations.dart';
 import '../repeat/repeat_icon_button.dart';
@@ -213,20 +214,20 @@ class _OptionpageWidgetState extends State<OptionpageWidget>
       appBar: AppBar(
         backgroundColor: Color(0xFFF1F4F8),
         automaticallyImplyLeading: false,
-        leading: RepEatIconButton(
-          borderColor: Colors.transparent,
-          borderRadius: 30,
-          borderWidth: 1,
-          buttonSize: 60,
-          icon: Icon(
-            Icons.arrow_back_rounded,
-            color: Color(0xFF57636C),
-            size: 30,
-          ),
-          onPressed: () async {
-            Navigator.pop(context);
-          },
-        ),
+        // leading: RepEatIconButton(
+        //   borderColor: Colors.transparent,
+        //   borderRadius: 30,
+        //   borderWidth: 1,
+        //   buttonSize: 60,
+        //   icon: Icon(
+        //     Icons.arrow_back_rounded,
+        //     color: Color(0xFF57636C),
+        //     size: 30,
+        //   ),
+        //   onPressed: () async {
+        //     Navigator.pop(context);
+        //   },
+        // ),
         actions: [
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0, 15, 5, 0),
@@ -355,7 +356,7 @@ class _OptionpageWidgetState extends State<OptionpageWidget>
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'waiter',
+                                          'Waiter',
                                           style: RepEatTheme.of(context)
                                               .subtitle1
                                               .override(
@@ -383,7 +384,7 @@ class _OptionpageWidgetState extends State<OptionpageWidget>
                           await Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => OrderallocatedWidget(),
+                              builder: (context) => ChefoptionWidget(),
                             ),
                           );
                         },
@@ -527,72 +528,72 @@ class _OptionpageWidgetState extends State<OptionpageWidget>
                       ).animated(
                           [animationsMap['containerOnPageLoadAnimation3']]),
                     ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
-                      child: Container(
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 7,
-                              color: Color(0x32171717),
-                              offset: Offset(0, 3),
-                            )
-                          ],
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(12, 12, 12, 12),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(40),
-                                child: Image.network(
-                                  'https://images.unsplash.com/photo-1598346762291-aee88549193f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTV8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
-                                  width: 40,
-                                  height: 40,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                              Expanded(
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      16, 0, 0, 0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 8),
-                                        child: Text(
-                                          'Inventory',
-                                          style: RepEatTheme.of(context)
-                                              .subtitle1
-                                              .override(
-                                                fontFamily: 'Outfit',
-                                                color: Color(0xFF0F1113),
-                                                fontSize: 18,
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ).animated(
-                          [animationsMap['containerOnPageLoadAnimation4']]),
-                    ),
+                    // Padding(
+                    //   padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                    //   child: Container(
+                    //     width: double.infinity,
+                    //     decoration: BoxDecoration(
+                    //       color: Colors.white,
+                    //       boxShadow: [
+                    //         BoxShadow(
+                    //           blurRadius: 7,
+                    //           color: Color(0x32171717),
+                    //           offset: Offset(0, 3),
+                    //         )
+                    //       ],
+                    //       borderRadius: BorderRadius.circular(16),
+                    //     ),
+                    //     child: Padding(
+                    //       padding:
+                    //           EdgeInsetsDirectional.fromSTEB(12, 12, 12, 12),
+                    //       child: Row(
+                    //         mainAxisSize: MainAxisSize.max,
+                    //         crossAxisAlignment: CrossAxisAlignment.end,
+                    //         children: [
+                    //           ClipRRect(
+                    //             borderRadius: BorderRadius.circular(40),
+                    //             child: Image.network(
+                    //               'https://images.unsplash.com/photo-1598346762291-aee88549193f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTV8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+                    //               width: 40,
+                    //               height: 40,
+                    //               fit: BoxFit.cover,
+                    //             ),
+                    //           ),
+                    //           Expanded(
+                    //             child: Padding(
+                    //               padding: EdgeInsetsDirectional.fromSTEB(
+                    //                   16, 0, 0, 0),
+                    //               child: Column(
+                    //                 mainAxisSize: MainAxisSize.max,
+                    //                 mainAxisAlignment: MainAxisAlignment.center,
+                    //                 crossAxisAlignment:
+                    //                     CrossAxisAlignment.start,
+                    //                 children: [
+                    //                   Padding(
+                    //                     padding: EdgeInsetsDirectional.fromSTEB(
+                    //                         0, 0, 0, 8),
+                    //                     child: Text(
+                    //                       'Inventory',
+                    //                       style: RepEatTheme.of(context)
+                    //                           .subtitle1
+                    //                           .override(
+                    //                             fontFamily: 'Outfit',
+                    //                             color: Color(0xFF0F1113),
+                    //                             fontSize: 18,
+                    //                             fontWeight: FontWeight.w500,
+                    //                           ),
+                    //                     ),
+                    //                   ),
+                    //                 ],
+                    //               ),
+                    //             ),
+                    //           ),
+                    //         ],
+                    //       ),
+                    //     ),
+                    //   ).animated(
+                    //       [animationsMap['containerOnPageLoadAnimation4']]),
+                    // ),
                   ],
                 ),
               ),

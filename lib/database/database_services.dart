@@ -18,25 +18,30 @@ class DatabaseServices {
     }
   }
 
-  void fetchTables() async {
+  Future fetchTables() async {
     try {
       var response = await Supabase.instance.client
           .from("tables")
           .select("id")
-          .eq("reserved", 0)
+          .eq("reserved", 1)
           .execute();
-      tables = [];
-      List dataList = await response.data
+      // tables = [];
+      List dataList = await response.data;
+      print("LIST");
+      // print(dataList);
+      var store = dataList
+          .map((tableElement) => print(tableElement))
+          .toList();
+      return dataList
           .map((tableElement) => TablesAvailable.fromJson(tableElement))
           .toList();
-      for (int i = 0; i < dataList.length; i++) {
-        tables.add(dataList[i].id.toString());
-      }
-      print(tables);
+
+
     } catch (e) {
       print(e.toString());
     }
   }
+
 
 makeReserved(int id, String occasion,) {
     print("Executing response");

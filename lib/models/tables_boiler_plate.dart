@@ -7,15 +7,19 @@ String toJson(List<TablesAvailable> data) => json.encode(List<dynamic>.from(data
 class TablesAvailable {
   TablesAvailable({
     this.id,
+    this.occassion,
   });
 
   int id;
+  String occassion;
 
   factory TablesAvailable.fromJson(Map<String, dynamic> json) => TablesAvailable(
     id: json["id"],
+    occassion: json["occassion"],
   );
 
   Map<String, dynamic> toJson() => {
     "id": id,
+    "occassion":occassion,
   };
 }
